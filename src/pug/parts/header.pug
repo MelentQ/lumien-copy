@@ -1,0 +1,31 @@
+header.header(class=headerClass class="fix-block")
+  .site-container.header__container.grid-container
+    .header__block
+      a.logo.header__logo(href="/")
+        +icon-multi("logo")(width="161" height="22" class="logo__icon")
+    .header__block
+      a.header__link(href="/common-catalog.html")
+        |	Каталог
+    .header__block
+      button.button-reset.header__menu-btn.js-open-menu-btn
+        span
+        span
+        span
+      a.header__link(href="/spheres.html" class=(pageName === "applications" ? "_is-current" : false))
+        |	Сферы применения
+      a.header__link(href="/cases-page.html")
+        |	Кейсы
+      button.header__link.header__search-btn.button-reset.js-search-btn
+        +icon-mono("search")(width="22" height="22" class="header__link-icon")
+    .header__block
+      a.header__link.header__page-link(href="/")
+        |	ENG
+      a.header__link.header__page-link(href="tel:+74957975775")
+        |	+7 495 797-57-75
+      button.button-reset.header__menu-btn.js-open-menu-btn._mobile
+        span
+        span
+        span
+      button.button-reset.button.header__btn(data-path="callback")
+        span.mobile-hidden Оставить заявку
+        span.descktop-hidden Заявка

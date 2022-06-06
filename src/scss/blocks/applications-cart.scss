@@ -1,0 +1,216 @@
+.applications-cart {
+  position: relative;
+  z-index: 4;
+  display: block;
+  overflow: hidden;
+  border-radius: 2.5rem;
+
+  --application-text-color: var(--color-dark);
+
+  @include mq(md) {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-input);
+  }
+
+  @include mq(sm) {
+    border-radius: 1.2rem;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5.5rem;
+    min-height: 46.9rem;
+
+    h3 {
+      position: relative;
+      z-index: 2;
+      font: var(--font-title-3);
+      margin-bottom: 6.4rem;
+      height: 8.6rem;
+      margin-top: auto;
+      color: var(--color-white);
+
+      @include mq(lg) {
+        height: auto;
+      }
+
+      @include mq(md) {
+        color: var(--color-dark);
+        margin: 0;
+        display: flex;
+        width: 100%;
+      }
+
+      @include mq(sm) {
+        font: var(--font-title-5);
+      }
+    }
+
+    p {
+      position: relative;
+      z-index: 2;
+      font: var(--font-body-S);
+      color: var(--application-text-color);
+      transition: color var(--transition);
+
+      @include mq(md) {
+        display: none;
+      }
+    }
+
+    @include mq(lg) {
+      padding: 3.5rem;
+    }
+
+    @include mq(md) {
+      min-height: 0;
+    }
+
+    @include mq(sm) {
+      flex-grow: 1;
+      padding: 2.2rem 1.5rem;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 3.7rem;
+    right: 4.5rem;
+    display: block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-bottom: 3px solid var(--color-accent);
+    border-right: 3px solid var(--color-accent);
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: opacity var(--transition);
+
+    @include mq(md) {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%) rotate(-45deg);
+      opacity: 1;
+      right: 1.4rem;
+      width: 1rem;
+      height: 1rem;
+      border-width: 2px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include mq(md) {
+      position: static;
+      top: auto;
+      left: auto;
+    }
+  }
+
+  &__img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background-color: var(--overlay-color, rgba(0, 0, 0, 0));
+
+      @include mq(md) {
+        display: none;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(245.91deg, rgba(0, 0, 0, 0) 44.25%, rgba(0, 0, 0, 0.5) 91.09%);
+      content: "";
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      @include mq(lg) {
+        display: none;
+      }
+
+      rect {
+        width: 100%;
+        height: 100%;
+        height: 24rem;
+        transition: height var(--transition);
+
+        @include mq(custom, max, 1440) {
+          height: 28rem;
+        }
+
+        @include mq(custom, max, 1366) {
+          height: 25rem;
+        }
+      }
+    }
+
+    @include mq(lg) {
+      max-height: 32.1rem;
+    }
+
+    @include mq(md) {
+      position: static;
+      top: auto;
+      left: auto;
+      max-height: none;
+      height: 30rem;
+      width: 45rem;
+      flex-shrink: 0;
+      border-radius: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @include mq(sm) {
+      width: 12.9rem;
+      height: 9rem;
+    }
+  }
+
+  &:hover {
+    .applications-cart__img-wrapper {
+      svg {
+        rect {
+          height: 100%;
+        }
+      }
+    }
+
+    --application-text-color: var(--color-white);
+
+    .applications-cart__icon {
+      opacity: 1;
+    }
+  }
+}

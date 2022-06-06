@@ -1,0 +1,245 @@
+.header {
+  padding-top: 2.1rem;
+  padding-bottom: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+
+  @include mq(sm) {
+    padding: 1.5rem 0;
+  }
+
+  --default-color: var(--color-dark);
+
+  &.is-dark {
+    --default-color: var(--color-dark);
+  }
+
+  &.is-white {
+    --default-color: var(--color-white);
+  }
+
+  &.logo-hidden {
+    .logo {
+      display: none;
+
+      @include mq(lg) {
+        display: block;
+      }
+    }
+  }
+
+  &.is-front-page {
+    --default-color: var(--color-rgba-white-05);
+
+    .header__btn {
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+      border: none;
+      color: var(--color-rgba-white-05);
+
+      @include mq(sm) {
+        border: 1px solid var(--default-color);
+        border-radius: 2.5rem;
+        padding: 1rem 1.5rem;
+        margin-left: 1rem;
+      }
+
+      &:hover,
+      &:focus {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &.is-fixed {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(44px);
+    --default-color: var(--color-dark);
+
+    .logo {
+      display: inline-block;
+    }
+
+    &.is-front-page {
+      .header__btn {
+        color: var(--color-dark);
+      }
+    }
+
+    box-shadow: 0 0 10px rgba($color: #1E1E1E, $alpha: 0.5);
+
+    @include mq(sm) {
+      .header__btn {
+        background-color: var(--color-accent);
+        color: var(--color-white) !important;
+        border-color: var(--color-accent);
+      }
+    }
+  }
+
+	&__logo {
+		color: var(--default-color);
+	}
+
+  &__block {
+    align-self: center;
+    display: flex;
+    align-items: center;
+
+    &:nth-child(1) {
+      grid-column: 2 span;
+
+      @include mq(lg) {
+        grid-column: 6 span;
+      }
+    }
+
+    &:nth-child(2) {
+      grid-column: 3 span;
+
+      @include mq(lg) {
+        display: none;
+      }
+    }
+
+    &:nth-child(3) {
+      grid-column: 4 span;
+
+      @include mq(lg) {
+        display: none;
+      }
+    }
+
+    &:nth-child(4) {
+      grid-column: 3 span;
+
+      @include mq(lg) {
+        grid-column: 6 span;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font: var(--font-body-S);
+    transition: color var(--transition);
+    margin-right: 3.8rem;
+		color: var(--default-color);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &._is-current {
+      color: var(--color-accent);
+    }
+  }
+
+  &__page-link {
+    margin-right: 3rem;
+
+    @include mq(custom, max, 1366) {
+      margin-right: 1.6rem;
+    }
+
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+  &__menu-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 5.7rem;
+    height: 2rem;
+    cursor: pointer;
+    margin-right: 3.6rem;
+
+    span {
+      display: block;
+      flex-shrink: 0;
+      width: 4.4rem;
+      height: 0.15rem;
+      background-color: var(--default-color);
+      margin-bottom: 0.5rem;
+      transition: background-color var(--transition);
+
+      &:last-child {
+        align-self: flex-start;
+        margin-left: 0.7rem;
+        margin-bottom: 0;
+        width: 3rem;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      span {
+        background-color: var(--color-accent);
+      }
+    }
+
+    &._mobile {
+      display: none;
+
+      @include mq(lg) {
+        display: flex;
+        margin-left: auto;
+      }
+    }
+
+    @include mq(sm) {
+      width: 3.1rem;
+      margin-right: 1.2rem;
+
+      span {
+        width: 100%;
+
+        &:last-child {
+          margin: 0;
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    padding: 0.8rem 1rem;
+    border-radius: 2.5rem;
+    text-transform: none;
+    margin-left: auto;
+
+    @include mq(lg) {
+      margin-left: 0;
+    }
+
+    @include mq(sm) {
+      padding: 1rem 1.5rem;
+      font: var(--font-body-XS);
+    }
+  }
+
+  &__search-btn {
+    cursor: pointer;
+    transition: fill var(--transition);
+    fill: var(--default-color);
+
+    &:hover {
+      fill: var(--color-accent);
+    }
+
+    &:focus {
+      fill: var(--color-accent);
+    }
+  }
+}

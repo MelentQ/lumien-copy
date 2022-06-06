@@ -1,0 +1,22 @@
+.intro-block {
+  height: 66.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &_white {
+    .intro-block__heading {
+      color: var(--color-white);
+    }
+  }
+
+  &__heading {
+    @include mq(sm) {
+      max-width: 90%;
+    }
+  }
+
+  @include mq(sm) {
+    height: 35.5rem;
+  }
+}

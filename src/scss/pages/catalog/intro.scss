@@ -1,0 +1,80 @@
+.catalog-intro {
+  &__heading {
+    margin-bottom: 5rem;
+  }
+
+  .grid-container__block {
+    min-width: 0;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.2rem;
+
+    @include mq(lg) {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    font: var(--font-body-S);
+    color: rgba($color: #000000, $alpha: 0.5);
+    transition: color var(--transition);
+
+    @include mq(lg, min) {
+      &:hover {
+        color: var(--color-dark);
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    @include mq(lg) {
+      &:last-child {
+
+        &::before,
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+
+    &::after {
+      width: 11rem;
+      height: 0.1rem;
+      margin-left: 2.2rem;
+      background-color: var(--color-dark);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+      content: "";
+
+      @include mq(lg) {
+        opacity: 1;
+        width: 4.1rem;
+        margin-left: 1.5rem;
+      }
+    }
+
+    &.is-active {
+      color: var(--color-dark);
+
+      &::after {
+        opacity: 1;
+      }
+
+      @include mq(lg) {
+        color: var(--color-accent);
+      }
+    }
+  }
+}

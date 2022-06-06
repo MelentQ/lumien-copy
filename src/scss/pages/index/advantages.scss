@@ -1,0 +1,107 @@
+.advantages {
+    &__heading {
+      margin-bottom: 10.5rem;
+
+      @include mq(sm) {
+        margin-bottom: 5rem;
+      }
+    }
+
+    .grid-container__block {
+      min-width: 0;
+    }
+
+    &__item {
+      width: 24.9rem;
+      flex-shrink: 0;
+
+      @include mq(sm) {
+        width: 19rem;
+      }
+    }
+
+    &__slider {
+      min-width: 0;
+      display: flex;
+      gap: 9rem;
+      counter-reset: section;
+    }
+
+    &__slider-inner {
+      display: flex;
+      align-items: flex-start;
+      flex-shrink: 0;
+      gap: 9rem;
+
+      @include mq(sm) {
+        gap: 3.2rem;
+      }
+    }
+
+    &__item-top {
+      width: 100%;
+      padding-bottom: 2.9rem;
+      border-bottom: 1px solid var(--color-cream);
+      margin-bottom: 1.6rem;
+
+      @include mq(sm) {
+        padding-bottom: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__item-img {
+      margin: 0 auto;
+      width: 18rem;
+      height: 17.6rem;
+
+      @include mq(md) {
+        width: 14rem;
+        height: 13.6rem;
+      }
+
+      @include mq(sm) {
+        width: 8.8rem;
+        height: 8.8rem;
+      }
+    }
+
+    &__item-txt {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font: var(--font-sign);
+      background: var(--main-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @include mq(sm) {
+        font: var(--font-body-S);
+      }
+
+      &::before {
+        display: inline-block;
+        counter-increment: section;
+        content: "0" counter(section);
+        background: none;
+        background-clip: border-box;
+        -webkit-background-clip: border-box;
+        -webkit-text-fill-color: white;
+        padding: 0 1rem;
+        border-radius: 2rem;
+        background: var(--main-gradient);
+        font-weight: 300;
+        font-family: var(--second-ff);
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+
+        @include mq(sm) {
+          font-size: 1.4rem;
+          line-height: 1;
+          padding: 0.1rem 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+}

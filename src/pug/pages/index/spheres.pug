@@ -1,0 +1,129 @@
+-
+  let nav_arr1 = [
+    "Домашние развлечения",
+    "Бары и рестораны",
+    "Музеи и выставки",
+    "Образование",
+    "VR",
+    "Госсектор",
+    "Домашние развлечения",
+    "Домашние развлечения",
+    "Госсектор",
+    "Домашние развлечения",
+    "Госсектор",
+    "Домашние развлечения",
+  ]
+
+section.section-indent.spheres
+  // мобилка
+  .spheres__slider_mobile.js-tabs
+    .spheres__mobile-layer.js-mobile-layer.lazy(data-bg=`images/spheres-slider/img1.jpg` data-bg-fallback=`images/spheres-slider/img1.jpg`)
+    .site-container
+      span.site-second-heading.spheres__second-heading Сферы <br> применения
+      .tag__container.spheres__tag-container
+        button.button-reset.tag.spheres__tag.js-tab-btn.is-active(data-img="images/spheres-slider/img1.jpg") Домашние развлечения
+        button.button-reset.tag.spheres__tag.js-tab-btn(data-img="images/spheres-slider/img2.jpg") Образования
+        button.button-reset.tag.spheres__tag.js-tab-btn(data-img="images/spheres-slider/img2.jpg") Музеи и выставки
+        button.button-reset.tag.spheres__tag.js-tab-btn(data-img="images/spheres-slider/img2.jpg") Бары и рестораны
+        button.button-reset.tag.spheres__tag.js-tab-btn(data-img="images/spheres-slider/img2.jpg") Госсектор
+        button.button-reset.tag.spheres__tag.js-tab-btn(data-img="images/spheres-slider/img2.jpg") Кинотеатры
+        a.tag.spheres__tag(href="/spheres.html") + еще 6
+      .js-tab-content.spheres__mobile-tab.is-active
+        h2.site-first-heading.spheres__mobiel-heading Домашние развлечения
+        .spheres__txt-wrapper
+          .spheres__txt
+            ._line
+            p
+              | Стильные проекционные экраны Lumien предлагают уникальные решения премиального качества для оснащения домашних кинотеатров
+          a.spheres__link(href="/")
+            | Подробнее
+      .js-tab-content.spheres__mobile-tab
+        h2.site-first-heading.spheres__mobiel-heading Образования
+        .spheres__txt-wrapper
+          .spheres__txt
+            ._line
+            p
+              | Стильные проекционные экраны Lumien предлагают уникальные решения премиального качества для оснащения домашних кинотеатров
+          a.spheres__link(href="/")
+            | Подробнее
+      .js-tab-content.spheres__mobile-tab
+        h2.site-first-heading.spheres__mobiel-heading Музеи и выставки
+        .spheres__txt-wrapper
+          .spheres__txt
+            ._line
+            p
+              | Стильные проекционные экраны Lumien предлагают уникальные решения премиального качества для оснащения домашних кинотеатров
+          a.spheres__link(href="/")
+            | Подробнее
+      .js-tab-content.spheres__mobile-tab
+        h2.site-first-heading.spheres__mobiel-heading Бары и рестораны
+        .spheres__txt-wrapper
+          .spheres__txt
+            ._line
+            p
+              | Стильные проекционные экраны Lumien предлагают уникальные решения премиального качества для оснащения домашних кинотеатров
+          a.spheres__link(href="/")
+            | Подробнее
+      .js-tab-content.spheres__mobile-tab
+        h2.site-first-heading.spheres__mobiel-heading Госсектор
+        .spheres__txt-wrapper
+          .spheres__txt
+            ._line
+            p
+              | Стильные проекционные экраны Lumien предлагают уникальные решения премиального качества для оснащения домашних кинотеатров
+          a.spheres__link(href="/")
+            | Подробнее
+      .js-tab-content.spheres__mobile-tab
+        h2.site-first-heading.spheres__mobiel-heading Кинотеатры
+        .spheres__txt-wrapper
+          .spheres__txt
+            ._line
+            p
+              | Стильные проекционные экраны Lumien предлагают уникальные решения премиального качества для оснащения домашних кинотеатров
+          a.spheres__link(href="/")
+            | Подробнее
+  // мобилка END
+
+  // десктоп
+  .spheres__slider.swiper
+    .swiper-wrapper
+      for item, index in nav_arr1
+        - let second = index == 1 ? 'img2' : 'img1'
+        .spheres__slide-item.swiper-slide.lazy(data-bg=`images/spheres-slider/${second}.jpg` data-bg-fallback=`images/spheres-slider/${second}.jpg`)
+          .site-container.grid-container.spheres__container
+            .grid-container__block
+            .grid-container__block.spheres__content-info
+              .spheres__content-info-block
+                span.site-second-heading.spheres__second-heading.js-animated-heading Сферы <br> применения
+                if (index === 0)
+                  .tag__container.spheres__tag-container
+                    a.tag.spheres__tag(href="/spheres-detail.html") Домашние развлечения
+                    a.tag.spheres__tag(href="/spheres-detail.html") Образования
+                    a.tag.spheres__tag(href="/spheres-detail.html") Музеи и выставки
+                    a.tag.spheres__tag(href="/spheres-detail.html") Бары и рестораны
+                    a.tag.spheres__tag(href="/spheres-detail.html") Госсектор
+                    a.tag.spheres__tag(href="/spheres-detail.html") Кинотеатры
+                    a.tag.spheres__tag(href="/spheres.html") + еще 6
+              .spheres__content-info-block
+                h2.site-first-heading.spheres__first-heading= item
+                .spheres__txt-wrapper.js-text-spheres-wrapper
+                  .spheres__txt
+                    ._line
+                    p
+                      | Стильные проекционные экраны Lumien предлагают уникальные решения премиального качества для оснащения домашних кинотеатров
+                  a.spheres__link(href="/")
+                    | Подробнее
+  .spheres__nav-container
+    .site-container
+      button.slider-nav__btn.slider-nav__btn_transparent.spheres__nav-btn.button-reset.js-spheres-btn-prev
+        +icon-mono("shevron-left")(width="9" height="13" class="slider-nav__btn-icon")
+      .spheres__nav-wrapper
+        .swiper.spheres__nav
+          span._active-border
+          .swiper-wrapper
+            for item in nav_arr1
+              .spheres__nav-item.swiper-slide
+                span= item
+      button.slider-nav__btn.slider-nav__btn_transparent.spheres__nav-btn.button-reset.js-spheres-btn-next
+        +icon-mono("shevron-right")(width="9" height="13" class="slider-nav__btn-icon")
+  // десктоп END

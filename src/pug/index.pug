@@ -1,0 +1,11 @@
+extends layout/default.pug
+
+block variables
+  - const bodyClass = ""
+  - const pageTitle = "Главная"
+  - const siteLang = "ru"
+  - const headerClass = "logo-hidden is-front-page"
+  - const pageName = "index"
+
+block content
+  include pages/index/main.pug

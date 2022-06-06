@@ -1,0 +1,68 @@
+:root {
+  // colors
+  --color-dark: #1E1E1E;
+  --color-darken: #000;
+  --color-white: #fff;
+  --color-accent: #FF971D;
+  --color-purple: #5957E0;
+  --color-purple-light: #8381F8;
+  --border-color: #ACACAC;
+  --border-color2: #C3C3C3;
+  --text-color: #626262;
+  --color-bg: #FFF9F7;
+  --color-cream: #F1BCB1;
+  --color-bg-input: #F7F7F7;
+  --color-rgba-white-04: rgba(255, 255, 255, 0.4);
+  --color-rgba-white-05: rgba(255, 255, 255, 0.5);
+  --color-rgba-white-06: rgba(255, 255, 255, 0.6);
+  --color-rgba-white-07: rgba(255, 255, 255, 0.7);
+  --main-gradient: linear-gradient(180deg, #F2BCAF 0%, #B8ADF1 100%);
+
+  // Typography
+  --main-ff: "Golos", sans-serif;
+  --second-ff: "Manrope", sans-serif;
+
+  // body
+  --font-body-L: 700 2.4rem/105% var(--main-ff);
+  --font-body-M: 400 2rem/140% var(--main-ff);
+  --font-body-M-small: 400 1.8rem/2.3rem var(--main-ff);
+  --font-body-S: 400 1.6rem/130% var(--main-ff);
+  --font-body-XS: 400 1.4rem/130% var(--main-ff);
+  --font-body-XXS: 400 1.2rem/1 var(--main-ff);
+
+  // title
+  --font-title-1: 700 8.1rem/100% var(--second-ff);
+  --font-title-2: 700 4.6rem/110% var(--second-ff);
+  --font-title-3: 700 3.8rem/110% var(--second-ff);
+  --font-title-4: 700 2.6rem/130% var(--second-ff);
+  --font-title-4-semibold: 600 2.6rem/110% var(--second-ff);
+  --font-title-5: 700 1.8rem/2.3rem var(--second-ff);
+  --font-title-mobile: 700 1.8rem/1.9rem var(--second-ff);
+  --font-title-mobile-3: 700 3rem/3.6rem var(--second-ff);
+  --font-title-mobile-4: 600 2rem/2rem var(--second-ff);
+  --font-title-mobile-4-bold: 700 2rem/2.6rem var(--second-ff);
+
+  // button
+  --font-btn: 400 1.6rem/1.9rem var(--main-ff);
+  // подписи
+  --font-sign: 400 2.4rem/140% var(--main-ff);
+
+  // offset
+  --grid-offset: 21px;
+
+  // transition
+  --transition: 200ms;
+}
+
+
+@import "./helpers/**/*";
+@import './vendor/**/*';
+@import "./settings/**/*";
+@import "./blocks/**/*";
+@import './pages/**/*';
+
+@include mq(sm) {
+  :root {
+    --font-title-3: 700 3.4rem/110% var(--second-ff);
+  }
+}

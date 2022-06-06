@@ -1,0 +1,20 @@
+mixin news-slider(heading, slides)
+  section.section-indent.news
+    .site-container.news__container.grid-container
+      .grid-container__block
+      .grid-container__block
+        .news__heading-wrapper
+          .news__heading-link-wrapper
+            h2.site-second-heading.news__heading.js-animated-heading!= heading
+            a.news__heading-link(href="/") все новости
+          .slider-nav
+            button.slider-nav__btn.button-reset.js-news-btn-prev
+              +icon-mono("shevron-left")(width="9" height="13" class="slider-nav__btn-icon")
+            button.slider-nav__btn.button-reset.js-news-btn-next
+              +icon-mono("shevron-right")(width="9" height="13" class="slider-nav__btn-icon")
+    .site-container.js-anim-fade-out
+      .news__list.swiper.news-slider
+        .swiper-wrapper
+          for item in slides
+            .swiper-slide
+              +news-cart(item.img, "16.02.2022", item.name)
