@@ -20,6 +20,7 @@ export default () => {
   let aboutSilder = new Swiper(".page-about-history__date-slider", {
     slidesPerView: 'auto',
     spaceBetween: 25,
+    loop: true,
     navigation: {
       nextEl: '.js-about-btn-next',
       prevEl: '.js-about-btn-prev',

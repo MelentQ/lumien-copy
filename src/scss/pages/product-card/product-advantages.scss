@@ -198,3 +198,19 @@
     }
   }
 }
+
+.danil-kostil {
+  .product-advantages__item-content {
+    p {
+      margin-bottom: 2rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    h4 {
+      margin-bottom: 2.4rem;
+    }
+  }
+}

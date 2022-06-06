@@ -383,6 +383,9 @@
       height: 34.1rem;
       transition: all var(--transitionTime);
 
+      cursor: pointer;
+      user-select: none;
+
       @include mq(sm) {
         width: 16rem;
         height: 16rem;
